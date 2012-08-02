@@ -69,16 +69,16 @@
                  "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);"
                  "})();")]]
     [:body
+      [:p content]
       [:p
          (interpose " " [
-           "URL指定の例:"
+           "URLの例:"
            [:a.howto {:href "/500"} "500日分の次の13日の金曜日"]
            [:a.howto {:href "/10/json"} "10日分の次の13日の金曜日のJSON"]
            [:a.howto {:href "/6/jsonp"} "6日分の次の13日の金曜日のJSONP (callback=callback)"]
            [:a.howto {:href "/7/jsonp?callback=hoge"} "7日分の次の13日の金曜日のJSONP (callback=hoge)"]])]
-      [:p content]
       [:p
-         [:a.howto {:href "https://github.com/taiju/next-friday-the-13th#%E4%BD%BF%E3%81%84%E6%96%B9%EF%BC%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AE%E4%BB%95%E6%A7%98"} "使い方"]]]))
+         [:a.howto {:href "https://github.com/taiju/next-friday-the-13th#%E4%BD%BF%E3%81%84%E6%96%B9%EF%BC%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AE%E4%BB%95%E6%A7%98"} "詳しい使い方"]]]))
 
 (defpage "/" []
   (layout site-name (formatted-get-next-friday-the-13th)))
