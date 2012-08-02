@@ -6,7 +6,7 @@
         [noir.statuses :only [set-page!]]
         [hiccup.page-helpers :only [html5]]))
 
-(def limit 5000)
+(def limit 9999)
 (def site-name "次の13日の金曜日")
 (def font-size 14)
 
