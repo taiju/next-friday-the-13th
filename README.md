@@ -1,5 +1,8 @@
 # 次の13日の金曜日
 
+## サイト名
+[次の13日の金曜日](http://next-friday-the-13th.herokuapp.com)（[http://next-friday-the-13th.herokuapp.com](http://next-friday-the-13th.herokuapp.com)）
+
 ## これは何？
 次の13日の金曜日を知るためのサービスです。
 

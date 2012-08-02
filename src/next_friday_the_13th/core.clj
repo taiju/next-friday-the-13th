@@ -60,7 +60,7 @@
     [:body
       [:p content]
       [:p
-       [:a.howto {:href "#"} "使い方"]]]))
+       [:a.howto {:href "https://github.com/taiju/next-friday-the-13th"} "使い方"]]]))
 
 (defpage "/" []
   (layout site-name (formatted-get-next-friday-the-13th)))
