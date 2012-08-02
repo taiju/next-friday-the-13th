@@ -60,7 +60,7 @@
     [:body
       [:p content]
       [:p
-       [:a.howto {:href "https://github.com/taiju/next-friday-the-13th"} "使い方"]]]))
+       [:a.howto {:href "https://github.com/taiju/next-friday-the-13th#%E4%BD%BF%E3%81%84%E6%96%B9%EF%BC%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AE%E4%BB%95%E6%A7%98"} "使い方"]]]))
 
 (defpage "/" []
   (layout site-name (formatted-get-next-friday-the-13th)))
