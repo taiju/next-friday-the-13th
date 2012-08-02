@@ -56,7 +56,16 @@
       [:style (str
                 (format "body { font-size: %dpx; font-family: monospace; }" font-size)
                 "p { margin: 8px 0; }"
-                ".howto { color: #000; }")]]
+                ".howto { color: #000; }")]
+      [:script (str
+                 "var _gaq = _gaq || [];"
+                 "_gaq.push(['_setAccount', 'UA-28378627-9']);"
+                 "_gaq.push(['_trackPageview']);"
+                 "(function() {"
+                 "var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;"
+                 "ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';"
+                 "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);"
+                 "})();")]]
     [:body
       [:p content]
       [:p
