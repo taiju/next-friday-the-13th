@@ -77,14 +77,14 @@
     (if (within-the-limit? (Integer/parseInt n))
       (json (get-next-friday-the-13th :n 999))
       (json (get-next-friday-the-13th :n (Integer/parseInt n))))
-    (json [{:error "Non-numeric parameters don't allow"}])))
+    (json {:error "Non-numeric parameters don't allow"})))
 
 (defpage "/:n/jsonp" {:keys [n callback] :or {callback "callback"}}
   (if (numberstring? n)
     (if (within-the-limit? (Integer/parseInt n))
       (jsonp callback (get-next-friday-the-13th :n 999))
       (jsonp callback (get-next-friday-the-13th :n (Integer/parseInt n))))
-    (jsonp callback [{:error "Non-numeric parameters don't allow"}])))
+    (jsonp callback {:error "Non-numeric parameters don't allow"})))
 
 (set-page! 404 (layout (format "%s - 404 not found" site-name) "404 not found."))
 
