@@ -88,5 +88,5 @@
 
 (set-page! 404 (layout (format "%s - 404 not found" site-name) "404 not found."))
 
-(defn -main [& m]
-  (start 8080))
+(defn -main [port]
+  (start (Integer/parseInt port)))
