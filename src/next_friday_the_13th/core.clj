@@ -56,9 +56,7 @@
       [:style (str
                 (format "body { font-size: %dpx; font-family: monospace; }" font-size)
                 "p { margin: 8px 0; }"
-                ".howto { color: #000; }"
-                "ul { margin: 0; padding: 0; }"
-                "li { display: inline; list-style-type: none; margin: 0 1em 0 0; }")]
+                "a { color: #000; }")]
       [:script (str
                  "var _gaq = _gaq || [];"
                  "_gaq.push(['_setAccount', 'UA-28378627-9']);"
@@ -73,12 +71,12 @@
       [:p
          (interpose " " [
            "URLの例:"
-           [:a.howto {:href "/500"} "500日分の次の13日の金曜日"]
-           [:a.howto {:href "/10/json"} "10日分の次の13日の金曜日のJSON"]
-           [:a.howto {:href "/6/jsonp"} "6日分の次の13日の金曜日のJSONP (callback=callback)"]
-           [:a.howto {:href "/7/jsonp?callback=hoge"} "7日分の次の13日の金曜日のJSONP (callback=hoge)"]])]
+           [:a {:href "/500"} "500日分の次の13日の金曜日"]
+           [:a {:href "/10/json"} "10日分の次の13日の金曜日のJSON"]
+           [:a {:href "/6/jsonp"} "6日分の次の13日の金曜日のJSONP (callback=callback)"]
+           [:a {:href "/7/jsonp?callback=hoge"} "7日分の次の13日の金曜日のJSONP (callback=hoge)"]])]
       [:p
-         [:a.howto {:href "https://github.com/taiju/next-friday-the-13th#%E4%BD%BF%E3%81%84%E6%96%B9%EF%BC%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AE%E4%BB%95%E6%A7%98"} "詳しい使い方"]]]))
+         [:a {:href "https://github.com/taiju/next-friday-the-13th#%E4%BD%BF%E3%81%84%E6%96%B9%EF%BC%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AE%E4%BB%95%E6%A7%98"} "詳しい使い方"]]]))
 
 (defpage "/" []
   (layout site-name (get-formatted-next-friday-the-13th)))
