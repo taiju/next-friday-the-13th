@@ -38,7 +38,7 @@
 (defn- get-next-friday-the-13th [& {:keys [n] :or {n 1}}]
   (take n (filter-friday-the-13th-infinity (get-today)))) 
 
-(defn- formatted-get-next-friday-the-13th [& {:keys [n] :or {n 1}}]
+(defn- get-formatted-next-friday-the-13th [& {:keys [n] :or {n 1}}]
   (apply str (interpose "<br />" (get-next-friday-the-13th :n n))))
 
 (defn- numberchar? [ch]
@@ -81,13 +81,13 @@
          [:a.howto {:href "https://github.com/taiju/next-friday-the-13th#%E4%BD%BF%E3%81%84%E6%96%B9%EF%BC%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AE%E4%BB%95%E6%A7%98"} "詳しい使い方"]]]))
 
 (defpage "/" []
-  (layout site-name (formatted-get-next-friday-the-13th)))
+  (layout site-name (get-formatted-next-friday-the-13th)))
 
 (defpage "/:n" {:keys [n]}
   (if (numberstring? n)
     (if (within-the-limit? (Integer/parseInt n))
-      (layout (format "%s - over limit %d日分" site-name limit) [:b (format "%d日分で勘弁してください。" limit)] [:br] (formatted-get-next-friday-the-13th :n limit))
-      (layout (format "%s - %s日分" site-name n) (formatted-get-next-friday-the-13th :n (Integer/parseInt n))))
+      (layout (format "%s - over limit %d日分" site-name limit) [:b (format "%d日分で勘弁してください。" limit)] [:br] (get-formatted-next-friday-the-13th :n limit))
+      (layout (format "%s - %s日分" site-name n) (get-formatted-next-friday-the-13th :n (Integer/parseInt n))))
     (layout (format "%s - invalid parameter" site-name) "パラメータには数字しか受け付けません。")))
 
 (defpage "/:n/json" {:keys [n]}
